@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-serif-romantic {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  .font-script {
+    font-family: 'Alex Brush', cursive, sans-serif;
+  }
+  .font-sans-clean {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes floatDrift {
+  0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+  33% { transform: translateY(-6px) rotate(1.5deg) scale(1.01); }
+  66% { transform: translateY(-12px) rotate(-1.5deg) scale(0.99); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.04); }
+}
+
+@keyframes candleFlicker {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.95; }
+  25% { transform: scale(1.08, 0.94) translate(-0.5px, -1px); opacity: 0.85; }
+  50% { transform: scale(0.96, 1.05) translate(0.5px, 0.5px); opacity: 1; }
+  75% { transform: scale(1.04, 0.98) translate(-0.5px, 0); opacity: 0.9; }
+}
+
+@keyframes celestialRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmerSlide {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(200%) rotate(25deg); }
+}
+
+@keyframes heartThump {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.15); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.12); }
+  70% { transform: scale(1); }
+}
+
+@keyframes fadeHeart {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(calc(-50% + var(--vx, 0px)), calc(-50% - 35px)) scale(1.15);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--vx, 0px)), calc(-50% - 75px)) scale(0.7);
+  }
+}
+
+.animate-fade-heart {
+  animation: fadeHeart 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-float {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: floatDrift 9s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.animate-flicker {
+  animation: candleFlicker 1.8s ease-in-out infinite;
+}
+
+.animate-celestial {
+  animation: celestialRotate 120s linear infinite;
+}
+
+.animate-celestial-reverse {
+  animation: celestialRotate 160s linear infinite reverse;
+}
+
+.animate-heartbeat {
+  animation: heartThump 2.4s ease-in-out infinite;
+}
+
+/* Glassmorphism & specular shimmer utilities */
+.glass-panel {
+  background: rgba(18, 19, 28, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 63, 94, 0.18);
+}
+
+.glass-panel-glow {
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Custom scrollbar for sleek aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(11, 12, 16, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(244, 63, 94, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 63, 94, 0.5);
+}
