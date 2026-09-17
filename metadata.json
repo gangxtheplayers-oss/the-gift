@@ -1,0 +1,6 @@
+{
+  "name": "Forever & Always",
+  "description": "An enchanting, interactive digital love sanctuary and romantic anniversary gift with interactive journey milestones, love letters, captured memories, and music box.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
